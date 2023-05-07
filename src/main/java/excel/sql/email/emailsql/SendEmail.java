@@ -18,8 +18,18 @@ import java.util.Properties;
 public class SendEmail {
 
     private static String emailFrom = "smohture01@gmail.com";
-    private static String content = "QR code attached";
-    private static String subject = "QR code attached";
+    private static String subject = "QR Code for UDW Registration";
+    private static String content = "Dear Student,\n" +
+            "\n" +
+            "We are excited to have you join us for the upcoming camp. As part of your registration, we are sending you a QR code that will allow you to access the camp facilities and activities.\n" +
+            "\n" +
+            "Please make sure to bring a copy of this email, along with a valid ID, to the registration desk when you arrive at the camp.\n" +
+            "\n" +
+            "If you have any questions or concerns, please do not hesitate to contact us.\n" +
+            "\n" +
+            "We look forward to seeing you soon!\n" +
+            "\n" +
+            "Best regards";
 
     public void generateEmail(String emailTo, byte[] qrArray) throws MessagingException, jakarta.mail.MessagingException, IOException {
 
