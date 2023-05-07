@@ -7,7 +7,7 @@ const fileInput = document.querySelector('#file-input');
 const generateEmailsButton = document.querySelector('#generate-emails');
 const generateEmails = document.getElementById('generate-email');
 const emailButtons = document.getElementById('generate-email-buttons');
-
+const prodUrl ="https://agreeable-planes-production.up.railway.app/";
 //showUsersButton.addEventListener('click', function() {
 //document.getElementById('search-form-container').style.display = 'none';
 //document.getElementById('result-container').style.display = 'none';
@@ -177,7 +177,7 @@ showUsersButton.addEventListener('click', function() {
 
 
 
-    fetch('http://localhost:8080/students/getAll')
+    fetch(prodUrl+'students/getAll')
       .then(response => response.json())
       .then(data => {
         table = document.getElementById('user-table');
@@ -215,7 +215,7 @@ document.getElementById('cancel-list').addEventListener('click', function(event)
     const formData = new FormData();
     formData.append('file', fileInput.files[0]);
     alert("File Uploaded");
-    fetch('http://localhost:8080/students/upload', {
+    fetch(prodUrl+'students/upload', {
       method: 'POST',
       body: formData
     })
@@ -255,7 +255,7 @@ let buttonsDisplayed = false;
       method: 'POST',
       body: (emailIds)
     };
-    fetch('http://localhost:8080/students/email', options)
+    fetch(prodUrl+'students/email', options)
       .then(response => response.text())
       .then(data => {
         console.log('Success:', data);
@@ -331,7 +331,7 @@ document.getElementById('insert').addEventListener('click', function() {
         body: JSON.stringify(payload)
     };
 
-    fetch('http://localhost:8080/students/add', options)
+    fetch(prodUrl+'students/add', options)
         .then(response => response.json())
         .then(data => {
             console.log('Success:', data);
@@ -363,7 +363,7 @@ document.getElementById('search').addEventListener('click', function(event) {
     const emailList = document.getElementById('searchEmail').value;
     //const url = "http://localhost:8080/students/search/"+emailList;
 
-   fetch('http://localhost:8080/students/search?email='+emailList)
+   fetch(prodUrl+'students/search?email='+emailList)
      .then(response => {
        if (!response.ok) {
          throw new Error('Network response was not ok');
@@ -439,7 +439,7 @@ document.getElementById('update').addEventListener('click', function() {
 
     console.log("Update data: "+JSON.stringify(student)+ "data: "+student);
     // Make a PUT request to the server with the updated data
-    fetch('http://localhost:8080/students/update', {
+    fetch(prodUrl+'students/update', {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json'
@@ -492,7 +492,7 @@ document.getElementById('search-delete').addEventListener('click', function(even
     const emailList = document.getElementById('emailId').value;
     //const url = "http://localhost:8080/students/search/"+emailList;
 
-   fetch('http://localhost:8080/students/search?email='+emailList)
+   fetch(prodUrl+'students/search?email='+emailList)
      .then(response => {
        if (!response.ok) {
          throw new Error('Network response was not ok');
@@ -538,7 +538,7 @@ document.getElementById('delete').addEventListener('click', function() {
 
     console.log("Delete data Id: "+id);
     // Make a PUT request to the server with the updated data
-    fetch('http://localhost:8080/students/delete/'+id, {
+    fetch(prodUrl+'students/delete/'+id, {
         method: 'DELETE',
         headers: {
             'Content-Type': 'application/text'
