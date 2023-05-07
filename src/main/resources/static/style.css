@@ -1,0 +1,147 @@
+label{
+color:white;
+font-family: impact ,sans-serif;
+}
+
+.table{
+
+background-color: rgba(0,0,0,.5);
+}
+
+body {
+
+  background-image: url("download.jpg");
+  /*background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center;
+  -webkit-backdrop-filter: blur(5px);*/ /* Use for Safari 9+, Edge 17+ (not a mistake) and iOS Safari 9.2+ */
+  backdrop-filter: blur(5px); /* Supported in Chrome 76 */
+    display: block;
+    position: absolute;
+    width: 100%; height: 100%;
+    top: 0;
+}
+.container {
+  z-index: 1;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 70vh;
+  margin-left: 20%;
+}
+
+h1 {
+  font-family: impact ,sans-serif;
+  letter-spacing: 0.05em;
+  text-align: center;
+  margin-bottom: 30px;
+  color: white;
+  /*text-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);*/
+ text-shadow: -1px 0px 0px black,
+  1px 0px 0px black,
+  0px -1px 0px black,
+  0px 1px 0px black;
+  /*-webkit-text-stroke-width: 0.25px;
+  -webkit-text-stroke-color: black;*/
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+input[type=file]{
+    color:white;
+}
+
+#file-input {
+  margin-right: 10px;
+  text-color: white;
+}
+
+button {
+  font-family: impact ,sans-serif;
+  letter-spacing: 0.05em;
+  margin-right: 10px;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
+  text-shadow: -1px 0px 0px black,
+    1px 0px 0px black,
+    0px -1px 0px black,
+    0px 1px 0px black;
+  background-color: #4CD7D0;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.form-container{
+background-color: rgba(0,0,0,.5);
+width:100%;
+}
+
+button:hover {
+  background-color: #0C6980;
+}
+
+table {
+  color: white;
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin-bottom: 20px;
+}
+
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+
+
+#generate-email-form,
+#insert-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+#email,
+#generate-email-form label,
+#insert-form label {
+  margin-bottom: 10px;
+}
+
+
+#generate-email-form input[type="text"],
+#insert-form input[type="text"],
+#insert-form input[type="email"],
+#insert-form input[type="number"] {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+#generate-email-form button,
+#insert-form button {
+  margin-top: 10px;
+}
+
+.cancel-btn {
+    align-items: right;
+  margin-top: 10px;
+  top: 10px;
+  right: 10px;
+}

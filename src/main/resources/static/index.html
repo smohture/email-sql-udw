@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dance Camp App</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="container">
+    <h1>ULTIMATE DANCE WEEK</h1>
+
+    <div class="button-container">
+        <button id="upload">Upload Excel</button>
+        <button id="generate-email">Generate Emails</button>
+        <button id="search-email">Update User</button>
+        <button id="show-users">Show Users</button>
+        <button id="insert-user">Insert User</button>
+        <button id="delete-user">Delete User</button>
+    </div>
+
+    <div id="upload-container" style="display:none;position: relative;" class="form-container">
+        <button type="button" id="cancel-upload" class="cancel-btn">Cancel</button>
+        <form id="upload-form" style="margin-top: 50px;">
+            <input type="file" accept=".xlsx, .xls" id="file-input" name="file">
+            <label for="file-input" id="upload-label"></label>
+            <button type="submit">Upload</button>
+        </form>
+    </div>
+
+    <div id="delete-form-container" style="display:none;position: relative;" class="form-container">
+
+        <form id="delete-form" style="margin-top: 50px;">
+            <button type="button" id="cancel-delete" class="cancel-btn">Cancel</button>
+            <label for="email">Enter Email ID:</label>
+            <input type="text" id="emailId" placeholder="Enter email ID">
+            <button type="submit" id="search-delete">Search</button>
+            <button type="button" id="delete" style="display: none">Delete</button>
+        </form>
+    </div>
+    <div id="generate-email-buttons" style="display: none; position: relative;" class="form-container">
+        <button type="button" id="cancel-email" class="cancel-btn">Cancel</button>
+        <div >
+            <!--<button id="generate-emails" style="margin-top: 50px;">Generate Emails For All</button>-->
+            <form id="generate-email-form" style="margin-top: 50px;">
+                <label for="email-ids">Enter Email IDs (comma-separated):</label>
+                <input type="text" id="email-ids" name="email-ids">
+                <button type="submit" id="generate-email-for-ids">Generate Emails for Above IDs</button>
+            </form>
+        </div>
+    </div>
+    <div id="insert-form-container" style="display:none;position: relative;" class="form-container">
+        <button type="button" id="cancel-insert" class="cancel-btn">Cancel</button>
+        <form id="insert-form" >
+
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="amount">Amount Remaining:</label>
+            <input type="number" id="amount" name="amount" min="0" required>
+
+            <button type="submit" id="insert">Insert</button>
+
+        </form>
+    </div>
+    <div id="search-form-container" style="display:none;position: relative;" class="form-container">
+
+        <form id="search-form" style="margin-top: 50px;">
+            <button type="button" id="cancel-search" class="cancel-btn">Cancel</button>
+            <label for="email">Enter Email ID:</label>
+            <input type="text" id="searchEmail" name="searchEmail" placeholder="Enter email ID">
+            <button type="submit" id="search">Search</button>
+            <button type="button" id="update" style="display: none">Update</button>
+        </form>
+    </div>
+
+    <div id="delete-result-container" class="form-container"></div>
+
+    <div id="result-container" class="form-container"></div>
+
+    <div id="user-list" style="display: none;margin-top: 50px;position: relative;">
+        <button type="button" id="cancel-list" class="cancel-btn" >Cancel</button>
+        <table id="user-table" class="table form-container">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Amount Remaining</th>
+                <th>Registered</th>
+                <th>Tagged</th>
+            </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <div>
+            <button id="prev-btn" disabled>Previous</button>
+            <button id="next-btn" disabled>Next</button>
+
+        </div>
+    </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
+
+
