@@ -334,7 +334,6 @@ document.getElementById('insert').addEventListener('click', function() {
     fetch(prodUrl+'students/add', options)
         .then(response => response.json())
         .then(data => {
-            console.log('Success:', data);
             alert("Record Inserted Successfully");
             // do something with the response data, e.g. show a success message
         })
@@ -452,6 +451,7 @@ document.getElementById('update').addEventListener('click', function() {
         .then(data => {
             console.log('Success:', data);
             alert("Record Updated Successfully");
+            location.reload();
             // show a success message to the user
         })
         .catch((error) => {
@@ -550,6 +550,7 @@ document.getElementById('delete').addEventListener('click', function() {
         .then(data => {
             console.log('Success:', data);
             alert("Record is Deleted");
+            location.reload();
             // show a success message to the user
         })
         .catch((error) => {
