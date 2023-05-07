@@ -28,7 +28,7 @@ public class StudentHelper {
     public static List<Student> excelToList(InputStream inputStream) throws IOException {
         List<Student> list = new ArrayList<>();
         XSSFWorkbook workbook = new XSSFWorkbook(inputStream);
-        XSSFSheet sheet = workbook.getSheet("sheet1");
+        XSSFSheet sheet = workbook.getSheet("Sheet1");
 
         Iterator<Row> iterator = sheet.iterator();
         int rowValue =0;
