@@ -7,7 +7,8 @@ const fileInput = document.querySelector('#file-input');
 const generateEmailsButton = document.querySelector('#generate-emails');
 const generateEmails = document.getElementById('generate-email');
 const emailButtons = document.getElementById('generate-email-buttons');
-const prodUrl ="https://agreeable-planes-production.up.railway.app/";
+const prodUrl ="https://ultimate-dance-week.up.railway.app/";
+//const prodUrl = 'http://localhost:8080/';
 //showUsersButton.addEventListener('click', function() {
 //document.getElementById('search-form-container').style.display = 'none';
 //document.getElementById('result-container').style.display = 'none';
