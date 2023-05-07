@@ -214,16 +214,16 @@ document.getElementById('cancel-list').addEventListener('click', function(event)
     event.preventDefault();
     const formData = new FormData();
     formData.append('file', fileInput.files[0]);
-    alert("File Uploaded");
+
     fetch(prodUrl+'students/upload', {
       method: 'POST',
       body: formData
     })
     .then(response => response.json())
     .then(data => {
-      console.log('File uploaded successfully:', data);
+      alert("File Uploaded Successfully");
     })
-    .catch(error => console.error('Error uploading file:', error));
+    .catch(error => alert('Error uploading file'));
   });
 
 
@@ -259,12 +259,12 @@ let buttonsDisplayed = false;
       .then(response => response.text())
       .then(data => {
         console.log('Success:', data);
-        alert("Email sent");
+        alert("Email sent Successfully");
         // do something with the response data, e.g. show a success message
       })
       .catch((error) => {
         console.error('Error:', error);
-        alert("Email not sent");
+        alert("Something went wrong. Email not sent");
         // show an error message to the user
       });
   });
@@ -335,12 +335,12 @@ document.getElementById('insert').addEventListener('click', function() {
         .then(response => response.json())
         .then(data => {
             console.log('Success:', data);
-            alert("Record inserted");
+            alert("Record Inserted Successfully");
             // do something with the response data, e.g. show a success message
         })
         .catch((error) => {
             console.error('Error:', error);
-            alert("Record not inserted");
+            alert("Something went wrong. Record not inserted.");
             // show an error message to the user
         });
 });
@@ -451,12 +451,12 @@ document.getElementById('update').addEventListener('click', function() {
         })
         .then(data => {
             console.log('Success:', data);
-            alert("Record updated");
+            alert("Record Updated Successfully");
             // show a success message to the user
         })
         .catch((error) => {
             console.error('Error:', error);
-            alert("Record not updated");
+            alert("Something went wrong. Record not updated.");
                                                // show an error message to the user
      });
 });
@@ -554,7 +554,7 @@ document.getElementById('delete').addEventListener('click', function() {
         })
         .catch((error) => {
             console.error('Error:', error);
-            alert('Error:', error);
+            alert('Something went wrong. Record not deleted.');
                                                // show an error message to the user
      });
 });

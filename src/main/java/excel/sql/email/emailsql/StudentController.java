@@ -51,7 +51,7 @@ public class StudentController {
         return service.searchStudent(email);
     }
     @PostMapping(path = "/email", produces = "application/json")
-    public String sendEmail(@RequestBody String emails) throws MessagingException, jakarta.mail.MessagingException, IOException, WriterException {
+    public ResponseEntity<String> sendEmail(@RequestBody String emails) throws MessagingException, jakarta.mail.MessagingException, IOException, WriterException {
         String[] emailArr;
         String notSent="";
         emailArr = emails.split(",");
@@ -68,24 +68,24 @@ public class StudentController {
         }
 
         if(notSent.equals(""))
-            return ("Email sent to: "+emails);
-        return "Emails not sent to: "+notSent;
+            return ResponseEntity.ok("Email sent to: "+emails);
+        return ResponseEntity.ok("Emails not sent to: "+notSent);
     }
 
     @PostMapping(path = "/add", consumes = "application/json")
-    public String addStudent(@RequestBody Student student) throws IOException, WriterException, MessagingException {
+    public ResponseEntity<String> addStudent(@RequestBody Student student) throws IOException, WriterException, MessagingException {
         try {
             service.insertRecord(student);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-        return "Record inserted";
+        return ResponseEntity.ok("Record inserted");
     }
 
     @PutMapping(path = "/update", consumes = "application/json")
-    public String updateStudent(@RequestBody Student student) throws IOException, WriterException, MessagingException, jakarta.mail.MessagingException {
+    public ResponseEntity<String> updateStudent(@RequestBody Student student) throws IOException, WriterException, MessagingException, jakarta.mail.MessagingException {
         service.updateRecord(student);
-        return "Record updated";
+        return ResponseEntity.ok("Record updated");
     }
 
 }
